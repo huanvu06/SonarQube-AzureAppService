@@ -65,11 +65,11 @@
             "type": "Microsoft.Web/sites",
             "location": "[parameters('siteLocation')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+                "[resourceId('Microsoft.Web/serverfarms/', 'azapp-plan-why-lemongrass-001')]"
             ],
             "properties": {
                 "name": "[parameters('siteName')]",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'azapp-plan-why-lemongrass-001')]",
                 "clientAffinityEnabled": false
             },
             "resources": [
