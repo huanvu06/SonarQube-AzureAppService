@@ -5,15 +5,15 @@
         "hostingPlanName": {
             "type": "string",
             "minLength": 1,
-            "defaultValue": "SonarQubeAppServicePlan"
+            "defaultValue": "azapp-plan-why-lemongrass-001"
         },
         "siteLocation": {
             "type": "string",
-            "defaultValue": "North Central US"
+            "defaultValue": "Southeast Asia"
         },
         "siteName": {
             "type": "string",
-            "defaultValue": "SonarQubeAppService"
+            "defaultValue": "azapp-sonarqube-001"
         },
         "skuName": {
             "defaultValue": "B1",
@@ -56,21 +56,9 @@
         }
     },
     "variables": {
-        "deploymentTelemetryKey": "e15aa4db-a1cc-4622-844f-e7dd01596983"
+        "deploymentTelemetryKey": "5340241e-980c-4d59-9e5b-ffd38d4a3c12"
     },
     "resources": [
-        {
-            "apiVersion": "2016-09-01",
-            "name": "[parameters('hostingPlanName')]",
-            "type": "Microsoft.Web/serverfarms",
-            "location": "[parameters('siteLocation')]",
-            "sku": {
-                "name": "[parameters('skuName')]"
-            },
-            "properties": {
-                "name": "[parameters('hostingPlanName')]"
-            }
-        },
         {
             "apiVersion": "2016-08-01",
             "name": "[parameters('siteName')]",

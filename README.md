@@ -24,8 +24,9 @@ If you wish to switch SQ to use an Azure SQL database deploy out the database wi
 | Name | Value |
 | ---- | ----- |
 | sonar.jdbc.url | jdbc:sqlserver://AzureSQLDatabaseServer.database.windows.net:1433;database=DatabaseName;encrypt=true; |
-| sonar.jdbc.username | SqlUserLogin |
-| sonar.jdbc.password | SqlUserLoginPassword |
+| sonar.jdbc.url | jdbc:mysql://lemongrassdb01.mysql.database.azure.com:3306/sonarqube |
+| sonar.jdbc.username | dbadmin@lemongrassdb01 |
+| sonar.jdbc.password | CFEFp6QMSA |
 
 ## Alternative Hosting Methods
 Some alternative hosting methods are below with the relevant links.
@@ -36,6 +37,10 @@ Some alternative hosting methods are below with the relevant links.
 
 **Azure App Service with a Linux Container**  
 <https://azure.microsoft.com/en-us/resources/templates/101-webapp-linux-sonarqube-mysql/>
+
+`
+az group deployment create --resource-group rg-why-lemongrass-002 --template-file azuredeploy.json
+`
 
 **Docker Image**  
 <https://hub.docker.com/_/sonarqube/>
