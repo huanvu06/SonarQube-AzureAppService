@@ -64,9 +64,7 @@
             "name": "[parameters('siteName')]",
             "type": "Microsoft.Web/sites",
             "location": "[parameters('siteLocation')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms/', 'azapp-plan-why-lemongrass-001')]"
-            ],
+            "dependsOn": [],
             "properties": {
                 "name": "[parameters('siteName')]",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'azapp-plan-why-lemongrass-001')]",
