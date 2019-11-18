@@ -61,14 +61,14 @@
     "resources": [
         {
             "apiVersion": "2016-09-01",
-            "name": "azapp-plan-why-lemongrass-001",
+            "name": "[parameters('hostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
             "location": "[parameters('siteLocation')]",
             "sku": {
                 "name": "[parameters('skuName')]"
             },
             "properties": {
-                "name": "azapp-plan-why-lemongrass-001"
+                "name": "[parameters('hostingPlanName')]"
             }
         },
         {
@@ -77,11 +77,11 @@
             "type": "Microsoft.Web/sites",
             "location": "[parameters('siteLocation')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms/', 'azapp-plan-why-lemongrass-001')]"
+                "[resourceId('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
             ],
             "properties": {
                 "name": "[parameters('siteName')]",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'azapp-plan-why-lemongrass-001')]",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]",
                 "clientAffinityEnabled": false
             },
             "resources": [
